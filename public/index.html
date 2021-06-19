@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <!-- <link rel="stylesheet" type="text/css" href="styles.css" /> -->
+  <script src="script.js"></script>
+</head>
+
+<body ng-app='app'>
+  <div ng-controller='appctrl'>
+    <div class="card login-form" style="padding: 32px;">
+      <div class="card-body">
+        <h3 class="card-title text-center"><b>Register</b></h3><br>
+        <div class="card-text">
+          <div class="form-group">
+            <label>Email address</label>
+            <input type="email" class="form-control" ng-model="email" placeholder="razorpaytest@gmail.com">
+          </div>
+          <div class="form-group">
+            <label>Amount</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">₹</span>
+              </div>
+              <input type="number" class="form-control" ng-model="price" disabled>
+            </div>
+          </div>
+
+          <button ng-click='createorder()' class="btn btn-success btn-block">Register& Pay</button><br>
+        </div>
+      </div>
+    </div>
+  </div>
+  <input type="text" class="form-control" ng-model="key" ng-init="key='rzp_test_OZVSjLJtJJa6iL'" disabled="" hidden="">
+</body>
+
+</html>
